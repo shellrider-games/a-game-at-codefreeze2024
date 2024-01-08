@@ -11,7 +11,7 @@ window.onload = () => {
 }
 
 function msToSeconds(ms) {
-    return ms * 0.0001;
+    return ms * 0.001;
 }
 
 function drawBackground() {
@@ -49,7 +49,15 @@ function gameLoop(timestamp){
     requestAnimationFrame(gameLoop);
 }
 
+function setupScene() {
+    gameData.actors.push(player);
+    gameData.actors.push(obstacle_generator);
+}
+
 function startGame() {
     globals.lastTimestamp = 0;
+
+    setupScene();
+
     requestAnimationFrame(gameLoop);
 }
