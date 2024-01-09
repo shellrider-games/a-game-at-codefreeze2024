@@ -3,12 +3,12 @@ const obstacle_generator = {
 }
 
 obstacle_generator.update = (delta) => {
-    console.log("obstacle_generator update");
     obstacle_generator.timeTillNextSpawn -= delta;
-    console.log("time till next spawn " + obstacle_generator.timeTillNextSpawn);
     if(obstacle_generator.timeTillNextSpawn <= 0){
-        gameData.actors.push(new Obstacle(160, false));
-        gameData.actors.push(new Obstacle(200, true));
+        const obstacle1 = new Obstacle(160, false)
+        const obstacle2 = new Obstacle(200, true)
+        gameData.actors.push(obstacle1);
+        gameData.actors.push(obstacle2);
         obstacle_generator.timeTillNextSpawn += 1.5;
     }
 }

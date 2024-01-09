@@ -1,6 +1,7 @@
 const globals = {}
 const gameData = {
-    actors : []
+    actors : [],
+    obstacles : []
 }
 
 window.onload = () => {
